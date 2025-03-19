@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olzhas Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #a5bfe4;
+      --text-color: #000000;
+      --accent-color: #5f8dac;
+    }
+
+    body.dark {
+      --bg-color: #000000;
+      --text-color: #f4f4f4;
+      --accent-color: #324b9e;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header, nav, main, section, article, footer {
+      padding: 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    nav {
+      text-align: center;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--text-color);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    button.theme-toggle {
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background-color: #59add4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    article {
+      background-color: var(--bg-color);
+      border: 1px solid var(--text-color);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1><strong>Olzhas</strong></h1>
+    <p>Motion Designer | Web Designer | Editor | Business Analyst | Marketing</p>
+    <button class="theme-toggle" onclick="toggleTheme()"><strong>Theme</strong></button>
+  </header>
+
+  <nav>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('projects')">Projects</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about" class="active">
+      <h2>About Me</h2>
+      <p><strong>Hello! I'm Olzhas, a creative motion designer, web designer, editor, and business analyst with a strong background in marketing. I combine design thinking and strategic insight to bring ideas to life visually and effectively.</strong></p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article>
+        <h3>Brand Promo Video</h3>
+        <p>A sleek motion graphics video designed to promote a startup brand with dynamic animations and storytelling.</p>
+      </article>
+      <article>
+        <h3>Web Portfolio Design</h3>
+        <p>A responsive, modern web portfolio showcasing design, motion, and branding projects built in HTML/CSS/JS.</p>
+      </article>
+      <article>
+        <h3>Marketing Campaign Analysis</h3>
+        <p>A complete analysis report of digital marketing campaigns with visuals, results, and actionable strategies.</p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="olzhas@mail.ri">olzhas.sigma228@mail.ru</a></p>
+      <p>LinkedIn: <a href="www.linkedin.com/in/olzhas-zhailybay-7a109a333" target="_blank">olzhas.linkedin</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 || all rights are mine.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+
+    function showSection(id) {
+      const sections = document.querySelectorAll("main section");
+      sections.forEach(section => section.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
